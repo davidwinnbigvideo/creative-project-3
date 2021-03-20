@@ -1,32 +1,77 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+<div id="app">
+  <div id="menu">
+    <div id="side">
+      <router-link to="/">
+        <div class="menu-item home">
+          <img src="https://live.staticflickr.com/4114/4817067053_ac45153546_b.jpg">
+          <p>Home</p>
+        </div>
+      </router-link>
+      <router-link to="/play">
+        <div class="menu-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Ic_person_48px.svg">
+          <p>Play</p>
+        </div>
+      </router-link>
     </div>
-    <router-view/>
   </div>
+  <router-view />
+</div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+body {
+  margin: 50px 100px;
+
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+#menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  grid-template-areas: "none brand side";
+  margin-bottom: 50px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+#menu a {
+  color: #B84901;
+}
+
+#brand {
+  grid-area: brand;
+  display: flex;
+  justify-content: center;
+}
+
+#brand img {
+  height: 200px;
+}
+
+#side {
+  grid-area: side;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#side img {
+  width: 50px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item p {
+  margin: 0px;
+}
+
+.home {
+  margin-right: 50px;
 }
 </style>
