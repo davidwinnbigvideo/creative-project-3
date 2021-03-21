@@ -42,16 +42,6 @@ body {
   color: #B84901;
 }
 
-#brand {
-  grid-area: brand;
-  display: flex;
-  justify-content: center;
-}
-
-#brand img {
-  height: 200px;
-}
-
 #side {
   grid-area: side;
   display: flex;
